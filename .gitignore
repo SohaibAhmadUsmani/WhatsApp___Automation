@@ -1,1 +1,25 @@
-env/settings.py/task_management/__pycache__/env/.gitignore db.sqlite3 wa_profile/*.pyc
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+env/Lib/
+env/Scripts/
+env/Include/
+env/pyvenv.cfg
+env/.gitignore
+
+# Database
+db.sqlite3
+
+# WhatsApp Chrome profile
+wa_profile/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
