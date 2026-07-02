@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule WhatsApp Message</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        input, textarea, button { display: block; margin: 10px 0; padding: 8px; width: 300px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h2>Schedule WhatsApp Message</h2>
+    {% if messages %}
+        {% for msg in messages %}
+            <p class="{{ msg.tags }}">{{ msg }}</p>
+        {% endfor %}
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="phone_number" placeholder="Phone (e.g., +923001234567)" required>
+        <textarea name="message" rows="4" placeholder="Your message" required></textarea>
+        <input type="datetime-local" name="scheduled_time" required>
+        <button type="submit">Schedule Message</button>
+    </form>
+    <br>
+    <a href="{% url 'message_status' %}">View Message Status</a>
+</body>
+</html>

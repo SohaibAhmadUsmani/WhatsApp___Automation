@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Status</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .pending { color: orange; }
+        .sent { color: green; }
+        .failed { color: red; }
+    </style>
+</head>
+<body>
+    <h2>Message Status</h2>
+    <a href="{% url 'schedule_message' %}">Schedule New Message</a>
+    <br><br>
+    <table>
+        <tr>
+            <th>Phone</th>
+            <th>Message</th>
+            <th>Scheduled</th>
+            <th>Status</th>
+            <th>Sent At</th>
+            <th>Error</th>
+        </tr>
+        {% for msg in messages %}
+        <tr>
+            <td>{{ msg.phone_number }}</td>
+            <td>{{ msg.message|truncatechars:50 }}</td>
+            <td>{{ msg.scheduled_time }}</td>
+            <td class="{{ msg.status }}">{{ msg.status }}</td>
+            <td>{{ msg.sent_at|default:"-" }}</td>
+            <td>{{ msg.error_message|default:"-" }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6">No messages yet.</td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

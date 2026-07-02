@@ -1,0 +1,30 @@
+Date: 1/7/2026
+Time: 16:44
+Phone Number: +923185067226
+Message: Test message from Python!
+--------------------
+Date: 1/7/2026
+Time: 17:4
+Phone Number: +923185067226
+Message: AOA ...
+--------------------
+Date: 1/7/2026
+Time: 17:19
+Phone Number: +923185067226
+Message: Direct test from celery worker script
+--------------------
+Date: 1/7/2026
+Time: 17:29
+Phone Number: +923185067226
+Message: ooopsie
+--------------------
+Date: 1/7/2026
+Time: 17:29
+Phone Number: +923185067226
+Message: ooh yaaa
+--------------------
+Date: 1/7/2026
+Time: 17:31
+Phone Number: +923185067226
+Message: ab fix hogaya ha
+--------------------
